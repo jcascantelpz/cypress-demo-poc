@@ -1,0 +1,205 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-09-05T23:06:58.776Z",
+    "end": "2025-09-05T23:07:33.072Z",
+    "duration": 34296,
+    "testsRegistered": 6,
+    "passPercent": 83.33333333333334,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2f421f11-02c3-4c7b-b4d0-c4ae026f98d1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "32b698ae-1f4f-41c5-ba76-41f8143da019",
+          "title": "Login en SauceDemo con múltiples usuarios",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Vamos a probar login con el usuario:standard_user",
+              "fullTitle": "Login en SauceDemo con múltiples usuarios Vamos a probar login con el usuario:standard_user",
+              "timedOut": null,
+              "duration": 4157,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').clear().type(usuario.username);\ncy.get('#password').clear().type(usuario.password);\ncy.get('#login-button').click();\nif (usuario.resultado === \"exitoso\") {\n  cy.url().should('include', '/inventory.html');\n  cy.contains('Products').should('be.visible');\n} else {\n  cy.url().should('include', 'https://www.saucedemo.com/');\n  cy.get('[data-test=\"error\"]').should('be.visible');\n}",
+              "err": {},
+              "uuid": "301b4215-c36b-4546-a4c8-8b19d37d43d8",
+              "parentUUID": "32b698ae-1f4f-41c5-ba76-41f8143da019",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Vamos a probar login con el usuario:locked_out_user",
+              "fullTitle": "Login en SauceDemo con múltiples usuarios Vamos a probar login con el usuario:locked_out_user",
+              "timedOut": null,
+              "duration": 2041,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').clear().type(usuario.username);\ncy.get('#password').clear().type(usuario.password);\ncy.get('#login-button').click();\nif (usuario.resultado === \"exitoso\") {\n  cy.url().should('include', '/inventory.html');\n  cy.contains('Products').should('be.visible');\n} else {\n  cy.url().should('include', 'https://www.saucedemo.com/');\n  cy.get('[data-test=\"error\"]').should('be.visible');\n}",
+              "err": {},
+              "uuid": "07534e30-7ad9-4ed5-aae4-726f5d3c38de",
+              "parentUUID": "32b698ae-1f4f-41c5-ba76-41f8143da019",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Vamos a probar login con el usuario:problem_user",
+              "fullTitle": "Login en SauceDemo con múltiples usuarios Vamos a probar login con el usuario:problem_user",
+              "timedOut": null,
+              "duration": 2571,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').clear().type(usuario.username);\ncy.get('#password').clear().type(usuario.password);\ncy.get('#login-button').click();\nif (usuario.resultado === \"exitoso\") {\n  cy.url().should('include', '/inventory.html');\n  cy.contains('Products').should('be.visible');\n} else {\n  cy.url().should('include', 'https://www.saucedemo.com/');\n  cy.get('[data-test=\"error\"]').should('be.visible');\n}",
+              "err": {},
+              "uuid": "a5cb8c60-1f10-4308-8a7e-e24984e31fe8",
+              "parentUUID": "32b698ae-1f4f-41c5-ba76-41f8143da019",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Vamos a probar login con el usuario:performance_glitch_user",
+              "fullTitle": "Login en SauceDemo con múltiples usuarios Vamos a probar login con el usuario:performance_glitch_user",
+              "timedOut": null,
+              "duration": 6682,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').clear().type(usuario.username);\ncy.get('#password').clear().type(usuario.password);\ncy.get('#login-button').click();\nif (usuario.resultado === \"exitoso\") {\n  cy.url().should('include', '/inventory.html');\n  cy.contains('Products').should('be.visible');\n} else {\n  cy.url().should('include', 'https://www.saucedemo.com/');\n  cy.get('[data-test=\"error\"]').should('be.visible');\n}",
+              "err": {},
+              "uuid": "6980a5ef-7189-4052-a5bd-5db811e4327f",
+              "parentUUID": "32b698ae-1f4f-41c5-ba76-41f8143da019",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Vamos a probar login con el usuario:error_user",
+              "fullTitle": "Login en SauceDemo con múltiples usuarios Vamos a probar login con el usuario:error_user",
+              "timedOut": null,
+              "duration": 6012,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').clear().type(usuario.username);\ncy.get('#password').clear().type(usuario.password);\ncy.get('#login-button').click();\nif (usuario.resultado === \"exitoso\") {\n  cy.url().should('include', '/inventory.html');\n  cy.contains('Products').should('be.visible');\n} else {\n  cy.url().should('include', 'https://www.saucedemo.com/');\n  cy.get('[data-test=\"error\"]').should('be.visible');\n}",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"error\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"error\"]`, but never found it.\n    at Context.eval (webpack://mi-primer-cypress/./cypress/e2e/login.cy.js:20:38)",
+                "diff": null
+              },
+              "uuid": "c588ce1f-3cb8-4342-9602-9762e23e0b78",
+              "parentUUID": "32b698ae-1f4f-41c5-ba76-41f8143da019",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Vamos a probar login con el usuario:visual_user",
+              "fullTitle": "Login en SauceDemo con múltiples usuarios Vamos a probar login con el usuario:visual_user",
+              "timedOut": null,
+              "duration": 1438,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').clear().type(usuario.username);\ncy.get('#password').clear().type(usuario.password);\ncy.get('#login-button').click();\nif (usuario.resultado === \"exitoso\") {\n  cy.url().should('include', '/inventory.html');\n  cy.contains('Products').should('be.visible');\n} else {\n  cy.url().should('include', 'https://www.saucedemo.com/');\n  cy.get('[data-test=\"error\"]').should('be.visible');\n}",
+              "err": {},
+              "uuid": "353c9252-031f-4af5-943f-b1ba623a241c",
+              "parentUUID": "32b698ae-1f4f-41c5-ba76-41f8143da019",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "301b4215-c36b-4546-a4c8-8b19d37d43d8",
+            "07534e30-7ad9-4ed5-aae4-726f5d3c38de",
+            "a5cb8c60-1f10-4308-8a7e-e24984e31fe8",
+            "6980a5ef-7189-4052-a5bd-5db811e4327f",
+            "353c9252-031f-4af5-943f-b1ba623a241c"
+          ],
+          "failures": [
+            "c588ce1f-3cb8-4342-9602-9762e23e0b78"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22901,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

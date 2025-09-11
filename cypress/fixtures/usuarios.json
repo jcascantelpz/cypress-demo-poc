@@ -1,8 +1,8 @@
 [
-  { "username": "standard_user", "password": "secret_sauce", "expected": "success" },
-  { "username": "locked_out_user", "password": "secret_sauce", "expected": "fail" },
-  { "username": "problem_user", "password": "secret_sauce", "expected": "success" },
-  { "username": "performance_glitch_user", "password": "secret_sauce", "expected": "success" },
-  { "username": "error_user", "password": "secret_sauce", "expected": "fail" },
-  { "username": "visual_user", "password": "secret_sauce", "expected": "success" }
+  { "username": "standard_user", "password": "secret_sauce", "resultado": "exitoso" },
+  { "username": "locked_out_user", "password": "secret_sauce", "resultado": "fallo" },
+  { "username": "problem_user", "password": "secret_sauce", "resultado": "exitoso" },
+  { "username": "performance_glitch_user", "password": "secret_sauce", "resultado": "exitoso" },
+  { "username": "error_user", "password": "secret_sauce", "resultado": "fallo" },
+  { "username": "visual_user", "password": "secret_sauce", "resultado": "exitoso" }
 ]
