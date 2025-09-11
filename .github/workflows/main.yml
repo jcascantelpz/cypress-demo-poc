@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [1] # Si quieres correr en paralelo cambia a [1, 2, 3]
+        containers: [1] # cámbialo a [1, 2, 3] si quieres paralelo
 
     steps:
       - name: Checkout repo
@@ -33,7 +33,4 @@ jobs:
           record: true
           parallel: true
           group: "GitHub Actions"
-          run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
-
-
-
+          key: ${{ secrets.CYPRESS_RECORD_KEY }}
