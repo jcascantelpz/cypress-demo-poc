@@ -1,5 +1,6 @@
 [
   { "username": "standard_user", "password": "secret_sauce", "resultado": "exitoso" },
+    { "username": "standard_user", "password": "secret_sauce", "resultado": "exitoso" },
   { "username": "locked_out_user", "password": "secret_sauce", "resultado": "fallo" },
   { "username": "problem_user", "password": "secret_sauce", "resultado": "exitoso" },
   { "username": "performance_glitch_user", "password": "secret_sauce", "resultado": "exitoso" },
