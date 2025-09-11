@@ -33,6 +33,7 @@ jobs:
           record: true
           parallel: true
           group: "GitHub Actions"
-          key: 
+          run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
+
 
 
