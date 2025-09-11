@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [1, 2] # ajusta el número de contenedores según tu plan de Cypress Cloud
+        containers: [1, 2] # 👈 2 contenedores en paralelo
 
     steps:
       - name: Checkout repo
