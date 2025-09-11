@@ -33,5 +33,6 @@ jobs:
           record: true
           parallel: true
           group: "GitHub Actions"
-          key: ${{ secrets.CYPRESS_RECORD_KEY }}
+          key: 
+
 
