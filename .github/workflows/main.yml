@@ -25,5 +25,5 @@ jobs:
       - name: Verify Cypress installation
         run: npx cypress --version
 
-      - name: Run Cypress tests
+      - name: npx cypress run --record --key 70b8d9e1-cb55-4944-b068-d18439e90692
         run: npx cypress run
