@@ -50,7 +50,7 @@ jobs:
           
             <h2 style="color:#2c3e50; text-align:center; margin:0;">Reporte de Ejecución de Pruebas</h2>
             <h4 style="color:#7f8c8d; text-align:center; margin-top:5px; font-weight:normal;">
-              Generado automáticamente por el pipeline de CI/CD en GitHub Actions
+              Generado automáticamente por el pipeline de CI/CD
             </h4>
           
             <hr style="margin:20px 0;"/>
@@ -71,7 +71,8 @@ jobs:
        
           
             <p style="color:gray; font-size:12px; text-align:center; margin-top:30px;">
-               Este correo fue generado automáticamente por el pipeline de CI/CD (GitHub Actions)<br/>
+               No responder a este correo<br/>
+               Este correo fue generado automáticamente con GitHub Actions<br/>
                Equipo ASECCSS QA 
             </p>
 
