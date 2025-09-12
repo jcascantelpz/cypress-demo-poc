@@ -43,7 +43,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
-          subject: "Reporte de prueba"
+          subject: "Informe Automático de Resultado de Pruebas"
           to: "jcascantelopez@hotmail.com"
           from: "Prueba <${{ secrets.EMAIL_USER }}>"
           html_body: |
