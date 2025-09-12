@@ -5,7 +5,7 @@ on:
     branches:
       - main
   pull_request:
-  workflow_dispatch:   # permite ejecutarlo manualmente
+  workflow_dispatch:   # permite ejecutarlo manualmente desde GitHub Actions
 
 jobs:
   cypress-run:
@@ -42,8 +42,21 @@ jobs:
       - name: Generate HTML report
         run: npx marge cypress/reports/report.json --reportDir cypress/reports
 
-      # 🔹 Enviar correo con el reporte adjunto
-      - name: Send email with HTML report
+      # 🔹 Extraer solo el body del HTML (para inyectar en correo)
+      - name: Extract HTML table
+        run: |
+          sed -n '/<body>/,/<\/body>/p' cypress/reports/mochawesome.html > cypress/reports/email-report.html
+
+      # 🔹 Guardar el contenido en variable de entorno
+      - name: Prepare HTML email
+        run: |
+          content=$(cat cypress/reports/email-report.html)
+          echo "EMAIL_BODY<<EOF" >> $GITHUB_ENV
+          echo "$content" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      # 🔹 Enviar correo con el reporte inline
+      - name: Send email with inline HTML report
         if: always()
         uses: dawidd6/action-send-mail@v3
         with:
@@ -59,5 +72,6 @@ jobs:
             <p><b>Repo:</b> ${{ github.repository }}</p>
             <p><b>Commit:</b> ${{ github.sha }}</p>
             <p><b>Estado:</b> ${{ steps.cypress.outcome }}</p>
-            <p>👉 Se adjunta el reporte detallado (mochawesome.html).</p>
-          attachments: cypress/reports/mochawesome.html
+            <hr/>
+            <h3>Detalle de pruebas:</h3>
+            ${{ env.EMAIL_BODY }}
