@@ -44,18 +44,44 @@ jobs:
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
           subject: "Reporte de prueba"
-          to: "jcascantelopez@hotmail.com, franciscoalas@hotmail.com"
+          to: "jcascantelopez@hotmail.com"
           from: "Prueba <${{ secrets.EMAIL_USER }}>"
           html_body: |
-            Esto es una prueba de envío de correo con CI
-          #  <div style="text-align:center; margin-bottom:20px;">
-           # <img src="https://raw.githubusercontent.com/jcascantelpz/cypress-demo-poc/main/logo.png" 
-          #  alt="ASECCSS" width="150"/>
-         #   </div>
-            
-         #   <p style="color:gray; font-size:12px; text-align:center; margin-top:30px;">
-         #   Este correo fue generado automáticamente por el pipeline de CI/CD.<br/>
-          #  No responder directamente a este mensaje.
-         #   </p>
+         
+           html_body: |
+            <div style="text-align:center; margin-bottom:20px;">
+              <img src="https://raw.githubusercontent.com/jcascantelpz/cypress-demo-poc/main/logo.png" 
+                   alt="ASECCSS" width="150"/>
+            </div>
+          
+            <h2 style="color:#2c3e50; text-align:center;">Reporte de Ejecución de Pruebas - ASECCSS</h2>
+          
+            <p>Hola equipo,</p>
+          
+            <p>Se ejecutaron las pruebas <b>Cypress</b> utilizando <b>GitHub Actions</b>.</p>
+          
+            <p> <b>Repositorio:</b> ${{ github.repository }}<br/>
+                <b>Commit:</b> ${{ github.sha }}<br/>
+                <b>Estado:</b> ${{ steps.cypress.outcome }}</p>
+          
+            <p> Puedes ver el detalle completo en Cypress Cloud:<br/>
+               <a href="https://cloud.cypress.io/invitation/26abb980-c5db-44d4-8ad0-f856e2dcca98" 
+                  style="color:#1a73e8; text-decoration:none; font-weight:bold;">
+                  Ver reporte en Cypress Cloud
+               </a>
+            </p>
+          
+            <hr/>
+          
+            <h3 style="color:#2c3e50;">Resumen de pruebas:</h3>
+            ${{ env.EMAIL_BODY }}
+          
+            <hr/>
+          
+            <p style="color:gray; font-size:12px; text-align:center; margin-top:30px;">
+              ✅ Este correo fue generado automáticamente por el pipeline de CI/CD (GitHub Actions).<br/>
+              No responder directamente a este mensaje.
+            </p>
+
        
          
