@@ -43,7 +43,7 @@ jobs:
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
           subject: "Informe Automático de Resultado de Pruebas"
-          to: "jcascantelopez@hotmail.com"
+          to: "jcascantelopez@hotmail.com, franciscoalas@hotmail.com,atorresl8910@gmail.com,brandon_avilaespinoza@hotmail.com, mariajosemorahernandez@gmail.com, amadrigalugalde@gmail.com>"
           from: "Equipo ASECCSS <${{ secrets.EMAIL_USER }}>"
           html_body: |
   
@@ -66,13 +66,12 @@ jobs:
               <b>Fecha de ejecución:</b> ${{ github.run_started_at }}
             </p>
 
-              Consulta el detalle completo en 
-              https://cloud.cypress.io/invitation/26abb980-c5db-44d4-8ad0-f856e2dcca98
+              Consulta el detalle en https://cloud.cypress.io/invitation/26abb980-c5db-44d4-8ad0-f856e2dcca98
        
           
             <p style="color:gray; font-size:12px; text-align:center; margin-top:30px;">
                No responder a este correo<br/>
-               Este correo fue generado automáticamente con GitHub Actions<br/>
+               Generado automáticamente con GitHub Actions<br/>
                Equipo ASECCSS QA 
             </p>
 
