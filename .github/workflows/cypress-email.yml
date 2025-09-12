@@ -35,15 +35,15 @@ jobs:
           server_port: 465
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
-          subject: "📊 Reporte Cypress - ASECCSS"
+          subject: "Reporte Cypress - ASECCSS"
           to: "jcascantelopez@hotmail.com"
-          from: "ASECCSS QA Bot <${{ secrets.EMAIL_USER }}>"
+          from: "Informe de Ejecución de Pruebas  <${{ secrets.EMAIL_USER }}>"
           body: |
             Hola equipo,
             
-            Se ejecutaron las pruebas Cypress en GitHub Actions.
+            Se ejecutaron las pruebas Cypress con GitHub Actions
 
-            Estado: ${{ steps.cypress.outcome }}
-            Repo: ${{ github.repository }}
-            Commit: ${{ github.sha }}
+            Si quiere ver más detealle consulta en Cypress Cloud: 
+            https://cloud.cypress.io/invitation/26abb980-c5db-44d4-8ad0-f856e2dcca98
+
 
