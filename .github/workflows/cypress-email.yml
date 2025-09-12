@@ -60,7 +60,6 @@ jobs:
               <b>Repositorio:</b> ${{ github.repository }}<br/>
               <b>Rama:</b> ${{ github.ref_name }}<br/>
               <b>Commit:</b> ${{ env.SHORT_SHA }} - ${{ github.event.head_commit.message }}<br/>
-              <b>Autor:</b> ${{ github.event.head_commit.author.name }}<br/>
               <b>Ejecutado por:</b> ${{ github.actor }}<br/>
               <b>Estado del Job:</b> ${{ job.status }}<br/>
               <b>Workflow:</b> ${{ github.workflow }} (#${{ github.run_number }})<br/>
@@ -72,7 +71,7 @@ jobs:
        
           
             <p style="color:gray; font-size:12px; text-align:center; margin-top:30px;">
-               Este correo fue generado automáticamente por el pipeline de CI/CD.<br/>
-              © ASECCSS QA Team
+               Este correo fue generado automáticamente por el pipeline de CI/CD (GitHub Actions)<br/>
+               Equipo ASECCSS QA 
             </p>
 
