@@ -46,10 +46,7 @@ jobs:
           to: "jcascantelopez@hotmail.com"
           from: "Equipo ASECCSS <${{ secrets.EMAIL_USER }}>"
           html_body: |
-            <div style="text-align:center; margin-bottom:20px;">
-              <img src="https://raw.githubusercontent.com/jcascantelpz/cypress-demo-poc/main/logo.png" 
-                   alt="ASECCSS" width="150"/>
-            </div>
+  
           
             <h2 style="color:#2c3e50; text-align:center; margin:0;">Reporte de Ejecución de Pruebas</h2>
             <h4 style="color:#7f8c8d; text-align:center; margin-top:5px; font-weight:normal;">
@@ -69,21 +66,13 @@ jobs:
               <b>Workflow:</b> ${{ github.workflow }} (#${{ github.run_number }})<br/>
               <b>Fecha de ejecución:</b> ${{ github.run_started_at }}
             </p>
-          
-            <hr style="margin:20px 0;"/>
-   
-            <p style="margin-top:20px;">
-              👉 Consulta el detalle completo en 
-              <a href="https://cloud.cypress.io/invitation/26abb980-c5db-44d4-8ad0-f856e2dcca98" 
-                 style="color:#1a73e8; text-decoration:none; font-weight:bold;">
-                 Ver reporte en Cypress Cloud
-              </a>
-            </p>
-          
-            <hr/>
+
+              Consulta el detalle completo en 
+              https://cloud.cypress.io/invitation/26abb980-c5db-44d4-8ad0-f856e2dcca98
+       
           
             <p style="color:gray; font-size:12px; text-align:center; margin-top:30px;">
-              ✅ Este correo fue generado automáticamente por el pipeline de CI/CD.<br/>
+               Este correo fue generado automáticamente por el pipeline de CI/CD.<br/>
               © ASECCSS QA Team
             </p>
 
