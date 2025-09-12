@@ -42,9 +42,9 @@ jobs:
           server_port: 465
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
-          subject: "Informe Automático de Resultado de Pruebas"
+          subject: "Resultado de Ejecución de Pruebas Automatizas con Cypress"
           to: "jcascantelopez@hotmail.com, franciscoalas@hotmail.com,atorresl8910@gmail.com,brandon_avilaespinoza@hotmail.com, mariajosemorahernandez@gmail.com, amadrigalugalde@gmail.com>"
-          from: "Equipo ASECCSS <${{ secrets.EMAIL_USER }}>"
+          from: " Informe de Pruebas Automatizadad<${{ secrets.EMAIL_USER }}>"
           html_body: |
             <div style="text-align:center; margin-bottom:20px;">
             <img src="https://raw.githubusercontent.com/jcascantelpz/cypress-demo-poc/main/logo.png" 
@@ -69,15 +69,17 @@ jobs:
               <b>Fecha de ejecución:</b> ${{ github.run_started_at }}
             </p>
 
+            <hr style="margin:20px 0;"/>
+
                           <p style="margin-top:20px;">
-                👉 Consulta el detalle completo en 
+                Consulta el detalle completo en 
                 <a href="https://cloud.cypress.io/invitation/26abb980-c5db-44d4-8ad0-f856e2dcca98" 
                    style="color:#1a73e8; text-decoration:none; font-weight:bold;">
                    Ver reporte en Cypress Cloud
                 </a>
               </p>
        
-          
+            <hr style="margin:20px 0;"/>
             <p style="color:gray; font-size:12px; text-align:center; margin-top:30px;">
                No responder a este correo<br/>
                Generado automáticamente con GitHub Actions<br/>
