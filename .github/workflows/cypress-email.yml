@@ -5,6 +5,7 @@ on:
     branches:
       - main
   pull_request:
+  workflow_dispatch:   # permite ejecutarlo manualmente desde GitHub Actions
 
 jobs:
   cypress-run:
@@ -14,16 +15,22 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Run Cypress tests
-        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
+      - name: Run Cypress tests on Cypress Cloud
+        uses: cypress-io/github-action@v6
+        with:
+          record: true
+          group: "GitHub Actions"
+          tag: "pipeline"
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         continue-on-error: true
         id: cypress
 
@@ -35,19 +42,17 @@ jobs:
           server_port: 465
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
-          subject: "Reporte Cypress - ASECCSS"
-          to: " jcascantelopez@hotmail.com"
-          from: "Informe de Ejecución de Pruebas  <${{ secrets.EMAIL_USER }}>"
+          subject: "📊 Reporte Cypress - ASECCSS"
+          to: "jcascantelopez@hotmail.com"
+          from: "Informe de Ejecución de Pruebas <${{ secrets.EMAIL_USER }}>"
           body: |
             Hola equipo,
-            
-            Se ejecutaron las pruebas Cypress y con GitHub Actions
 
-            Si quiere ver más detealle consulta en Cypress Cloud: 
-            Enlace: https://cloud.cypress.io/invitation/26abb980-c5db-44d4-8ad0-f856e2dcca98
+            Se ejecutaron las pruebas Cypress con GitHub Actions.
 
+            📌 Repo: ${{ github.repository }}
+            📌 Commit: ${{ github.sha }}
+            📌 Estado: ${{ steps.cypress.outcome }}
 
-
-            
-
-
+            👉 Detalles completos en Cypress Cloud:
+            https://cloud.cypress.io/
