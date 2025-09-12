@@ -1,12 +1,3 @@
-name: Cypress Tests with Email Notification
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-  workflow_dispatch:   # permite ejecutarlo manualmente desde GitHub Actions
-
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -34,7 +25,15 @@ jobs:
         continue-on-error: true
         id: cypress
 
-      - name: Send email with results
+      # 🔹 Generar reporte consolidado
+      - name: Merge test reports
+        run: npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+
+      - name: Generate HTML report
+        run: npx marge cypress/reports/report.json --reportDir cypress/reports
+
+      # 🔹 Enviar el correo con adjunto
+      - name: Send email with HTML report
         if: always()
         uses: dawidd6/action-send-mail@v3
         with:
@@ -44,15 +43,10 @@ jobs:
           password: ${{ secrets.EMAIL_PASS }}
           subject: "📊 Reporte Cypress - ASECCSS"
           to: "jcascantelopez@hotmail.com"
-          from: "Informe de Ejecución de Pruebas <${{ secrets.EMAIL_USER }}>"
-          body: |
-            Hola equipo,
-
-            Se ejecutaron las pruebas Cypress con GitHub Actions.
-
-            📌 Repo: ${{ github.repository }}
-            📌 Commit: ${{ github.sha }}
-            📌 Estado: ${{ steps.cypress.outcome }}
-
-            👉 Detalles completos en Cypress Cloud:
-            https://cloud.cypress.io/
+          from: "ASECCSS QA Bot <${{ secrets.EMAIL_USER }}>"
+          html_body: |
+            <h2>Resultados de pruebas Cypress</h2>
+            <p>Repo: ${{ github.repository }}</p>
+            <p>Commit: ${{ github.sha }}</p>
+            <p>👉 El reporte completo está adjunto.</p>
+          attachments: cypress/reports/mochawesome.html
