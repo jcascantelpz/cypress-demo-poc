@@ -36,7 +36,7 @@ jobs:
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
           subject: "Reporte Cypress - ASECCSS"
-          to: "jcascante@aseccss.com"
+          to: "jcascante@aseccss.com, jcascantelopez@hotmail.com"
           from: "Informe de Ejecución de Pruebas  <${{ secrets.EMAIL_USER }}>"
           body: |
             Hola equipo,
