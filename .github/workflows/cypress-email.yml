@@ -1,5 +1,4 @@
-name: Cypress Tests with Email Notification
-
+name: Pruebas Automatizadas con Cypress y CI con Pipeline/Action de GIT
 on:
   push:
     branches:
@@ -47,12 +46,15 @@ jobs:
           to: "jcascantelopez@hotmail.com, franciscoalas@hotmail.com,atorresl8910@gmail.com"
           from: "Prueba <${{ secrets.EMAIL_USER }}>"
           html_body: |
-              <h2>Reporte Cypress ASECCSS<h2>
-              <p>Pruebas ejecutadas en CI/CD<p>
-              <b>Repo:</b> ${{ github.repository }}
-              <br>
-              <b>Commit:</b> ${{ github.sha }}
-              <br>
+            <h2 style="text-align:center;">Reporte Cypress - ASECCSS</h2>
+            <p>Pruebas ejecutadas en CI/CD con GitHub Actions.</p>
+            <p>
+              <b>Repositorio:</b> ${{ github.repository }}<br/>
+              <b>Commit:</b> ${{ github.sha }}<br/>
               <b>Estado:</b> ${{ job.status }}
-              <hr>
-              <p style="color:gray">Este correo fue generado automaticamente
+            </p>
+            <hr/>
+            <p style="color:gray; font-size:12px; text-align:center;">
+              Este correo fue generado automáticamente por el pipeline de GIT Action.
+            </p>
+
