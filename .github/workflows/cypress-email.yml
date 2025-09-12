@@ -47,8 +47,8 @@ jobs:
           to: "jcascantelopez@hotmail.com"
           from: "Prueba <${{ secrets.EMAIL_USER }}>"
           html_body: |
-            Esto es una prueba
-            #<h2>Resultados de pruebas Cypress</h2>
+            Esto es una prueba de envío de correo con CI
+
            # <p><b>Repo:</b> ${{ github.repository }}</p>
           #  <p><b>Commit:</b> ${{ github.sha }}</p>
           ## <p><b>Estado:</b> ${{ steps.cypress.outcome }}</p>
