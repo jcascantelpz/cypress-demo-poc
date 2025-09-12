@@ -69,7 +69,13 @@ jobs:
               <b>Fecha de ejecución:</b> ${{ github.run_started_at }}
             </p>
 
-              Consulta el detalle en https://cloud.cypress.io/invitation/26abb980-c5db-44d4-8ad0-f856e2dcca98
+                          <p style="margin-top:20px;">
+                👉 Consulta el detalle completo en 
+                <a href="https://cloud.cypress.io/invitation/26abb980-c5db-44d4-8ad0-f856e2dcca98" 
+                   style="color:#1a73e8; text-decoration:none; font-weight:bold;">
+                   Ver reporte en Cypress Cloud
+                </a>
+              </p>
        
           
             <p style="color:gray; font-size:12px; text-align:center; margin-top:30px;">
