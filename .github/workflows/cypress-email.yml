@@ -34,27 +34,6 @@ jobs:
         continue-on-error: true
         id: cypress
 
-      # 🔹 Combinar reportes JSON en uno solo
-      - name: Merge test reports
-        run: npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
-
-      # 🔹 Generar HTML consolidado
-      - name: Generate HTML report
-        run: npx marge cypress/reports/report.json --reportDir cypress/reports
-
-      # 🔹 Extraer solo el body del HTML (para inyectar en correo)
-      - name: Extract HTML table
-        run: |
-          sed -n '/<body>/,/<\/body>/p' cypress/reports/mochawesome.html > cypress/reports/email-report.html
-
-      # 🔹 Guardar el contenido en variable de entorno
-      - name: Prepare HTML email
-        run: |
-          content=$(cat cypress/reports/email-report.html)
-          echo "EMAIL_BODY<<EOF" >> $GITHUB_ENV
-          echo "$content" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-
       # 🔹 Enviar correo con el reporte inline
       - name: Send email with inline HTML report
         if: always()
@@ -64,14 +43,13 @@ jobs:
           server_port: 465
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
-          subject: "📊 Reporte Cypress - ASECCSS"
+          subject: "Reporte Cypress - ASECCSS"
           to: "jcascantelopez@hotmail.com"
-          from: "ASECCSS QA Bot <${{ secrets.EMAIL_USER }}>"
+          from: "ASECCSS QA <${{ secrets.EMAIL_USER }}>"
           html_body: |
             <h2>Resultados de pruebas Cypress</h2>
             <p><b>Repo:</b> ${{ github.repository }}</p>
             <p><b>Commit:</b> ${{ github.sha }}</p>
             <p><b>Estado:</b> ${{ steps.cypress.outcome }}</p>
             <hr/>
-            <h3>Detalle de pruebas:</h3>
-            ${{ env.EMAIL_BODY }}
+         
