@@ -39,11 +39,11 @@ jobs:
           to: "jcascantelopez@hotmail.com"
           from: "ASECCSS QA Bot <${{ secrets.EMAIL_USER }}>"
           body: |
-            Hola equipo 👋,
+            Hola equipo,
+            
             Se ejecutaron las pruebas Cypress en GitHub Actions.
 
             Estado: ${{ steps.cypress.outcome }}
             Repo: ${{ github.repository }}
             Commit: ${{ github.sha }}
 
-            👉 Pueden ver el detalle completo en Cypress Cloud.
