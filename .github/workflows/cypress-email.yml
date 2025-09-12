@@ -44,18 +44,18 @@ jobs:
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
           subject: "Reporte de prueba"
-          to: "jcascantelopez@hotmail.com"
+          to: "jcascantelopez@hotmail.com, franciscoalas@hotmail.com"
           from: "Prueba <${{ secrets.EMAIL_USER }}>"
           html_body: |
             Esto es una prueba de envío de correo con CI
-            <div style="text-align:center; margin-bottom:20px;">
-            <img src="https://raw.githubusercontent.com/jcascantelpz/cypress-demo-poc/main/logo.png" 
-            alt="ASECCSS" width="150"/>
-            </div>
+          #  <div style="text-align:center; margin-bottom:20px;">
+           # <img src="https://raw.githubusercontent.com/jcascantelpz/cypress-demo-poc/main/logo.png" 
+          #  alt="ASECCSS" width="150"/>
+         #   </div>
             
-            <p style="color:gray; font-size:12px; text-align:center; margin-top:30px;">
-            ✅ Este correo fue generado automáticamente por el pipeline de CI/CD.<br/>
-            No responder directamente a este mensaje.
-            </p>
+         #   <p style="color:gray; font-size:12px; text-align:center; margin-top:30px;">
+         #   Este correo fue generado automáticamente por el pipeline de CI/CD.<br/>
+          #  No responder directamente a este mensaje.
+         #   </p>
        
          
