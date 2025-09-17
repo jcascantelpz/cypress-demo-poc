@@ -43,7 +43,7 @@ jobs:
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
           subject: "Resultado de Ejecución de Pruebas Automatizas con Cypress"
-          to: "jcascantelopez@hotmail.com, franciscoalas@hotmail.com,atorresl8910@gmail.com,brandon_avilaespinoza@hotmail.com, mariajosemorahernandez@gmail.com, amadrigalugalde@gmail.com>"
+          to: "jcascantelopez@hotmail.com, qa.cypress.reports.aseccss@gmail.com"
           from: " Informe de Pruebas Automatizadad<${{ secrets.EMAIL_USER }}>"
           html_body: |
             <div style="text-align:center; margin-bottom:20px;">
